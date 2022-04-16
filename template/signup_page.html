@@ -1,0 +1,276 @@
+<!--<html>
+    <head>
+        <title>Signup Page</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: white;
+            }
+            button{
+                background-color: #4CAF50;
+                width: 25%;
+                padding: 15px;
+                color: black;
+                border: none;
+                float: center;
+                font-size: 15px;
+            }
+            label{
+                font-size: 20px;
+            }
+            form{
+                border: 3px solid #f1f1f1;
+            }
+            input[type=email],input[type=text]{
+                width: 50%;
+                font-size: 15px;
+                margin: 8px 0px;
+                padding: 12px 20px;
+                display: inline-block;
+                border: 2px solid green;
+                box-sizing: border-box;
+            }
+            input[type=radio]{
+                height: 18px;
+                width: 18px;
+            }
+            button:hover{
+                opacity:0.7;
+
+            }
+            .container{
+                padding: 50px;
+                background-color: white;
+            }
+            .imgcontainer {
+                text-align: center;
+                margin: 24px 0 12px 0;
+            }
+              
+            img.avatar {
+                width: 10%;
+                border-radius: 50%;
+            } 
+            
+            .btn{
+                margin-bottom: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <center><h1>Register From</h1></center>
+        <form action="#" method="post">
+            {% csrf_token %}
+            {% load static %}
+            <center><div class="container">
+                <div class="imgcontainer">
+                    <img src="{% static 'profile.png' %}" alt="Avatar" class="avatar">
+                </div>
+                <label for='first_name'><b>First Name : </b></label>
+		        <input type='text' placeholder="Enter your first name" name='first_name' required><br>
+		        <label for='last_name'><b>Last Name :</b></label>
+		        <input type='text' placeholder='Enter your last name' name='last_name' required><br>
+		        <label for='sex' ><b>Sex : </b></label>
+		        <input type='radio' name='sex' value='male' required>
+		        <label ><b>Male</b></label>
+		        <input type='radio' name='sex' value='female' required>
+		        <label ><b>Female</b></label><br>
+            	<label for ='email'><b>Email Id :  </b></label>
+            	<input type="email" placeholder="Enter email" name="email" float="right"  required><br>  
+            	<label for='password'><b>Password : </b></label>
+            	<input type="text" placeholder="Enter Password" name="password" required><br>  
+            	<button class="btn" type="submit"><b>Signup</b></button><br>     
+            	Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+            </div></center>
+        </form>
+    </body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+<style>
+    *{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    background-color: #ecf0f3;
+    padding-top: 100px;
+    overflow: scroll;
+}
+
+.login-div{
+    width: 1000px;
+    height: 700px;
+    
+    padding: 19px 35px 40px 35px;
+    border-radius: 40px;
+    background-color: #ecf0f3;
+    box-shadow: 13px 13px 20px #cbced1,
+    -13px -13px 20px #fff;
+}
+
+
+.title{
+    text-align: center;
+    font-size: 28px;
+    padding-top: 10px;
+    letter-spacing: .5px;
+    color: rgb(62, 63, 63)
+
+}
+
+
+.fields{
+    width: 100%;
+    padding: 75px 5px 5px 5px;
+}
+
+.fields input{
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 10px 20px 5px;
+
+}
+
+.username,
+.password{
+    margin-bottom: 30px;
+    border-radius: 25px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset
+    -8px -8px 8px #fff;
+}
+
+.username1{
+    margin-bottom: 30px;
+    border-radius: 50px;
+    padding: 20px 0px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset
+    -8px -8px 8px #fff;
+}
+
+
+.fields svg{
+    height: 22px;
+    margin: 0 10px -3px 25px;
+}
+
+.signin-button{
+outline: none;
+border: none;
+cursor: pointer;
+width: 100%;
+height: 60px;
+border-radius: 30px;
+font-size: 20px;
+font-weight: 700;
+font-family: "Lato", sans-serif;
+color: #fff;
+text-align: center;
+background-color: #02c8db;
+box-shadow: 3px 3px 8px #b1b1b1,
+-3px -3px 8px #fff;
+transition: all 0.5s;
+}
+
+.signin-button:hover{
+    background-color: #50e5b9;
+}
+
+.signin-button:active{
+    background-color: #88ef9e;
+}
+
+.link{
+    padding-top: 20px;
+    text-align: center;
+
+}
+
+.link a{
+    text-decoration: none;
+    color: #aaa;
+    font-size: 15px;
+}
+</style>
+</head>
+<body>
+    <form action="#" method = "POST">
+        {% csrf_token %}
+        {% load static %}
+    <div class="login-div">
+        <div class="logo"></div>
+        <center> <div class="title">Login Form</div> </center>
+        
+            <div class="fields">
+                <div class="username">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+                    </svg>
+                    <input type="text" class="user-input" name="first_name" placeholder="First Name" required />
+                </div>
+
+                <div class="username">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+                    </svg>
+                    <input type="text" class="user-input" name="last_name" placeholder="Last_Name" required />
+                </div>
+
+                <div class="username1">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+                    </svg>
+                    <label><b>Male</b></label>
+                    <input type="radio" class="user-input" name="sex" value="Male" required/>
+                    <label><b>Female</b></label>
+                    <input type="radio" class="user-input" name="sex" value="Female" required />
+
+                </div>
+
+
+                <div class="username">
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path d="M12.075,10.812c1.358-0.853,2.242-2.507,2.242-4.037c0-2.181-1.795-4.618-4.198-4.618S5.921,4.594,5.921,6.775c0,1.53,0.884,3.185,2.242,4.037c-3.222,0.865-5.6,3.807-5.6,7.298c0,0.23,0.189,0.42,0.42,0.42h14.273c0.23,0,0.42-0.189,0.42-0.42C17.676,14.619,15.297,11.677,12.075,10.812 M6.761,6.775c0-2.162,1.773-3.778,3.358-3.778s3.359,1.616,3.359,3.778c0,2.162-1.774,3.778-3.359,3.778S6.761,8.937,6.761,6.775 M3.415,17.69c0.218-3.51,3.142-6.297,6.704-6.297c3.562,0,6.486,2.787,6.705,6.297H3.415z"></path>
+                    </svg>
+                    <input type="email" class="user-input" name="email" placeholder="email" required/>
+                </div>
+
+                <div class="password">
+
+                    <svg class="svg-icon" viewBox="0 0 20 20">
+                    <path d="M17.308,7.564h-1.993c0-2.929-2.385-5.314-5.314-5.314S4.686,4.635,4.686,7.564H2.693c-0.244,0-0.443,0.2-0.443,0.443v9.3c0,0.243,0.199,0.442,0.443,0.442h14.615c0.243,0,0.442-0.199,0.442-0.442v-9.3C17.75,7.764,17.551,7.564,17.308,7.564 M10,3.136c2.442,0,4.43,1.986,4.43,4.428H5.571C5.571,5.122,7.558,3.136,10,3.136 M16.865,16.864H3.136V8.45h13.729V16.864z M10,10.664c-0.854,0-1.55,0.696-1.55,1.551c0,0.699,0.467,1.292,1.107,1.485v0.95c0,0.243,0.2,0.442,0.443,0.442s0.443-0.199,0.443-0.442V13.7c0.64-0.193,1.106-0.786,1.106-1.485C11.55,11.36,10.854,10.664,10,10.664 M10,12.878c-0.366,0-0.664-0.298-0.664-0.663c0-0.366,0.298-0.665,0.664-0.665c0.365,0,0.664,0.299,0.664,0.665C10.664,12.58,10.365,12.878,10,12.878"></path>
+                    </svg>
+                    <input type="password" class="pass-input" name="password" placeholder="password" required/>
+                </div>
+            </div>
+        <button class="signin-button" type="submit">Signup</button>
+        <div class="link">
+            Already an accounct <a href="http://localhost:8000/login/"> Login </a>
+        </div>
+    </div>
+</form>
+</body>
+</html>
