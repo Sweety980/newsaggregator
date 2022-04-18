@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Error</title>
+    <title>loader</title>
     <style>
         *{
     margin: 0;
@@ -15,7 +15,7 @@
 }
 
 body{
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -25,16 +25,12 @@ body{
 .loader{
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .loader span{
     position: relative;
     width: 250px;
     height: 250px;
-    justify-content: center;
-    align-items: center;    
     background: #eaeef0;
     border: 6px solid #eaeef0;
     border-radius: 50%;
@@ -116,8 +112,6 @@ body{
     top: calc(35px * var(--i));
     left: calc(45px * var(--i));
     font-size: 2em;
-    justify-content: center;
-    align-items: center;
     color: #fff;
     -webkit-text-stroke: 2px #000;
     animation: animateClouds 1s linear infinite;
@@ -126,12 +120,11 @@ body{
 
 .entry{
     font-size: 2em;
-    font-weight: bolder;
+    font-weight: 800;
     color: #ff518c;
-    padding-top: 80px;
-    padding-bottom: 50px;
-    justify-content: center;
-    align-items: center;
+    padding-top: 0px;
+    margin-right: 100px;
+   
 
 }
 
@@ -147,17 +140,17 @@ body{
 </head>
 <body>
     <div class="entry">
-        <center>Invalid entry!</center>
+        Invalid entry!
     </div>
     
     <div class="loader">
         
         <div class="rocket">
             <i class="fas fa-rocket"></i>
-            <!-- <i class="fas fa-cloud" style="--i:0;"></i>
+            <i class="fas fa-cloud" style="--i:0;"></i>
             <i class="fas fa-cloud" style="--i:1;"></i>
             <i class="fas fa-cloud" style="--i:2;"></i>
-            <i class="fas fa-cloud" style="--i:3;"></i>  -->
+            <i class="fas fa-cloud" style="--i:3;"></i>
 
 
         </div>

@@ -12,10 +12,98 @@ integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRk
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
     <title>News App</title>
+    <style>
+        body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #2b2b2b;
+    transition: 0.5s;
+}
+
+body.active{
+    background: #f8f8f8;
+}
+
+.img{
+    border-radius: 40px;
+    
+}
+
+.img img{
+    border-radius: 40px;
+    width: 1110px;
+    height: 400px;
+}
+
+.rad{
+    border-radius: 40px;
+    padding: 20px;
+}
+
+#toggle{
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 60px;
+    border-radius: 60px;
+    background: #222;
+    cursor: pointer;
+    transition: 0.5s;
+    box-shadow: inset 0 8px 60px rgba(0, 0, 0, 0.1),
+                inset 0 8px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.1);
+}
+
+#toggle.active{
+    background: #fff;
+    box-shadow: inset 0 2px 60px rgba(0, 0, 0, 0.1),
+                inset 0 2px 8px rgba(0, 0, 0, 0.1),
+                inset 0 -4px 4px rgba(0, 0, 0, 0.05);
+
+}
+
+#toggle .indicator{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(to bottom, #444, #222);
+    border-radius: 50%;
+    transform: scale(0.9);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.5),
+                inset 0 4px 4px rgba(255,255,255,0.2),
+                inset 0 -4px 4px rgba(255,255,255,0.2);
+    transition: 0.5s;
+}
+
+#toggle.active .indicator{
+    left: 40px;
+    background: linear-gradient(to bottom, #eaeaea, #c5bfbf);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1),
+                inset 0 4px 4px rgba(255, 255, 255, 1),
+                inset 0 -4px 4px rgba(255, 255, 255, 1);
+}
+
+/*position fixed*/
+
+.pos{
+    position: fixed;
+}
+
+
+    </style>
 </head>
 <body>
     <div class="navbar fixed-top navbar-dark bg-dark">
         <div class="container">
+
+            <div id="toggle">
+                <i class="indicator"></i>
+            </div>
+    
             <h4 style="color: rgb(255, 255, 255)"> News App <h4 style="color: rgb(154,255,0);"> DJANGO FRAMEWORK </h4>
             <img src="{% static 'profile.png' %}" class="image" style="width:90px; ">
         </div>
@@ -25,21 +113,22 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
        </div>
     
     <!--card for header-->
-<div class="jumbotron" style="text-align: center; margin-top: 40px ">
+    <!--
+<div class="jumbotron pos" style="text-align: center; margin-top: 40px ">
     <h2>Latest News using<a href="https://newsapi.org" style="text-decoration: none;"> news API</a> </h2>
     <img src="{% static 'augu.png' %}" class="image" style="width: 150px; margin-bottom: -50px;">
     
-</div>
+</div>-->
 
 <!--Main-->
 
 <div class="container">
     {% for h1, des, img, url in mylist %}
 
-    <div class="card border-primary mb-3">
-        <img src="{{ img }}" alt="image">
+    <div class="card border-primary mb-3 img">
+        <img src="{{ img }}" alt="image">  <!--width="1110px" height="400px"-->
     </div>
-    <div class="card border-primary mb-3">
+    <div class="card border-primary mb-3 rad">
         <h4><span class="badge badge-warning">HEADLINE:</span></h4>
         <h5>{{ h1 }}{{value|linebreaks }}</h5>
         <h4><span class="badge badge-success">DESCRIPTION:</span></h4>
@@ -48,6 +137,16 @@ integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZD
      
 
 </div>
+
+
+<script>
+    const body = document.querySelector('body');
+    const toggle = document.getElementById('toggle');
+    toggle.onclick = function(){
+        toggle.classList.toggle('active');
+        body.classList.toggle('active');
+    }
+</script>
 
 {% endfor %}
 

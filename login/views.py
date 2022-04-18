@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 import mysql.connector as sql
 
@@ -23,7 +24,7 @@ def loginaction(request):
         if t==():
             return render(request, 'error.html')
         else:
-            return render(request, 'index.html')
+            return HttpResponseRedirect('index')
         
 
     return render(request, 'login_page.html')

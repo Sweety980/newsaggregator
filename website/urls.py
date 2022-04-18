@@ -26,5 +26,8 @@ urlpatterns = [
     path('', index),
     path('signup/',signaction),
     path('login/',loginaction),
+    path('login/index/',index),
+
+
     
 ]
